@@ -1,2 +1,2 @@
-# space-invaders-
+# space-invaders
 Space Invaders using PyGame
