@@ -1,6 +1,8 @@
 import sys
 import pygame
+
 from settings import Settings
+from ship import Ship 
 
 class AlienInvasion():
     
@@ -11,7 +13,10 @@ class AlienInvasion():
         self.settings = Settings()
 
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
+
         pygame.display.set_caption('Space Invaders')
+
+        self.ship = Ship(self)
 
     def run_game(self):
         while True:
@@ -20,6 +25,8 @@ class AlienInvasion():
                     sys.exit()
             
             self.screen.fill(self.settings.bg_color)
+            self.ship.blitme()
+            
             pygame.display.flip()
 
 if __name__ == '__main__':
